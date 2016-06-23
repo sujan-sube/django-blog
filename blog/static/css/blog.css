@@ -5,14 +5,23 @@ h1 a {
 }
 
 body {
-    padding-left: 15px;
     font-family: 'Exo';
     font-weight: 500;
 }
 
-.page-header {
+.nav.navbar-nav.navbar-right li p {
+    color: white;
+}
+
+.navbar-inverse .navbar-brand {
+    font-size: 24pt;
+    color: white;
+}
+
+/*.page-header {
     background-color: #ff9400;
     margin-top: 0;
+    margin-left: -15;
     padding: 20px 20px 20px 40px;
 }
 
@@ -21,6 +30,36 @@ body {
     font-size: 36pt;
     text-decoration: none;
 }
+
+.page-header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.page-header li {
+    float: left;
+}
+
+.page-header li a {
+    display: block;
+    color: #ffffff;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-header li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.page-header .active {
+    background-color: #4CAF50;
+    color: white;
+}*/
 
 .content {
     margin-left: 40px;
