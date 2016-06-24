@@ -26,44 +26,22 @@
                         <li><a href="/">About</a></li>
                         <li><a href="/">Contact</a></li>
                         <li><a href="/">Other</a></li>
-                        {% if user.is_authenticated %}
-                            <li><a href="{% url 'post_new' %}">New Post</a></li>
-                        {% endif %}
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         {% if user.is_authenticated %}
+                            <li><a id="newpost" href="/post/new"><button type="button" class="btn btn-default">New Post</button></a></li>
+                            <li><a id="viewprofile" href="/profile"><button type="button" class="btn btn-default">View Profile</button></a></li>
                             <li><p class="navbar-text">Logged in as {{ user.username }}</p></li>
+                            <li><a href="/admin"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
                         {% endif %}
-                        <li><a href="/admin"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="/admin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        {% if user.is_anonymous %}
+                            <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="/admin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
         </nav>
-
-        <!-- <div class="page-header">
-            <table>
-                <tr>
-                    <td>
-                        <h1><a href="/">Django Blog</a></h1>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Other</a></li>
-                            <li><a href="">New Post</a></li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div>
-            {% if user.is_authenticated %}
-                <a href="{% url 'post_new' %}" type="button" class="btn btn-success btn-md">New Post</a>
-            {% endif %}
-        </div> -->
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">

@@ -4,7 +4,12 @@
 {% block content %}
     {% for post in posts %}
         <div class="post">
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <h1>
+                <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+                {% if post.pinned_post == True %}
+                    <span class="glyphicon glyphicon-pushpin"></span>
+                {% endif %}
+            </h1>
             <p>{{ post.text|linebreaksbr }}</p>
             <div class="date">
                 <p>Published: {{ post.published_date }}</p>

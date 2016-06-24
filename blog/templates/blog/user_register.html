@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="user">
+        <h1>User Registration</h1>
+        {% if registered %}
+            <p>Thank you for registering!</p>
+            <a href="/">Return to homepage.</a>
+        {% else %}
+            <form id="user_form" method="POST" action="/register/" enctype="multipart/form-data">{% csrf_token %}
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <button type="submit" class="submit btn btn-default">Submit</button>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}
