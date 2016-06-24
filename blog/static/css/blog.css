@@ -30,7 +30,7 @@ body {
     margin-left: 40px;
 }
 
-.date {
+.postfooter {
     color: #828282;
 }
 
@@ -57,6 +57,9 @@ body {
     color: #000000;
 }
 
+.postbutton a {
+    margin-right: 5px;
+}
 /*.page-header {
     background-color: #ff9400;
     margin-top: 0;

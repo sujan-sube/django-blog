@@ -4,14 +4,18 @@
     <div class="post">
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
+        <div class="postfooter">
+            Posted By: {{ post.author }}
+        </div>
         {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
+            <div class="postfooter">Published: {{ post.published_date }}</div>
         {% endif %}
         <br/>
         {% if user.is_authenticated %}
+        <div class="postbutton">
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
+        </div>
         {% endif %}
     </div>
 {% endblock %}

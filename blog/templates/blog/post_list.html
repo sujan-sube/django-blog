@@ -11,7 +11,10 @@
                 {% endif %}
             </h1>
             <p>{{ post.text|linebreaksbr }}</p>
-            <div class="date">
+            <div class="postfooter">
+                Posted By: {{ post.author }}
+            </div>
+            <div class="postfooter">
                 <p>Published: {{ post.published_date }}</p>
             </div>
         </div>
