@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="user">
+        <h1>User Login</h1>
+        <form id="login_form" method="POST" action="/login/">{% csrf_token %}
+        Username: <input type="text" name="username" value="" size="30" />
+        <br/>
+        Password: <input type="password" name="password" value="" size="30" />
+        <br/>
+        <button type="submit" class="login btn btn-default">Login</button>
+    </div>
+{% endblock %}

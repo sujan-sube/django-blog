@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from django.template import RequestContext
 from .models import Post
 from .forms import PostForm, UserForm, UserProfileForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
-def user_register(request):
-    context = RequestContext(request)
+def register(request):
     registered = False
 
     if request.method == 'POST':
@@ -32,8 +33,29 @@ def user_register(request):
         user_form = UserForm()
         profile_form = UserProfileForm()
 
-    return render(request, 'blog/user_register.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+    return render(request, 'blog/register.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
+def user_login(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+
+        if user:
+            if user.is_active:
+                login(request, user)
+                return redirect('/')
+            else:
+                return HttpResponse("Your account is disasbled!")
+        else:
+            print("Invalid login details: {0}".format(username))
+    else:
+        return render(request, 'blog/login.html')
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect('/')
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-pinned_post', '-published_date')
@@ -43,6 +65,7 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
+@login_required
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -56,6 +79,7 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":

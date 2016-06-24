@@ -32,11 +32,11 @@
                             <li><a id="newpost" href="/post/new"><button type="button" class="btn btn-default">New Post</button></a></li>
                             <li><a id="viewprofile" href="/profile"><button type="button" class="btn btn-default">View Profile</button></a></li>
                             <li><p class="navbar-text">Logged in as {{ user.username }}</p></li>
-                            <li><a href="/admin"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+                            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
                         {% endif %}
                         {% if user.is_anonymous %}
                             <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="/admin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         {% endif %}
                     </ul>
                 </div>
