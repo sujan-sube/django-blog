@@ -3,7 +3,7 @@
 {% block content %}
     <div class="post">
         <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <p>{{ post.text|urlize|linebreaksbr }}</p>
         <div class="postfooter">
             Posted By: {{ post.author }}
         </div>

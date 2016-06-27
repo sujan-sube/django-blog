@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
     <div class="profile">
@@ -7,6 +8,6 @@
     <p>Username: {{ user.username }}</p>
     <p>Email Address: {{ user.email }}</p>
     <p>Description: {{ userprofile.description }}</p>
-    <p>Profile Picture: <img src="{{ userprofile.picture.url }}" alt="{{ userprofile.picture.name }}"/></p>
+    <p>Profile Picture: <img src="{% static userprofile.picture.url %}" alt="{{ userprofile.picture.name }}"/></p>
     <p>Website: <a href="{{ userprofile.website }}">{{ userprofile.website }}</a></p>
 {% endblock %}
