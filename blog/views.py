@@ -102,5 +102,6 @@ def post_edit(request, pk):
 @login_required
 def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    post.delete()
+    if request.user == post.author:
+        post.delete()
     return redirect('/')

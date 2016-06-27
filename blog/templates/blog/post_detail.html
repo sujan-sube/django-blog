@@ -11,7 +11,7 @@
             <div class="postfooter">Published: {{ post.published_date }}</div>
         {% endif %}
         <br/>
-        {% if user.is_authenticated %}
+        {% if user.is_superuser or user == post.author %}
         <div class="postbutton">
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
             <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
