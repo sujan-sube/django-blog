@@ -14,6 +14,7 @@ Below is a list of features that the blog currently has or that will be implemen
 - [ ] Posts support Markdown
 - [x] Account Access Level
 - [ ] Responsive Design
+- [ ] uWSGI and Nginx as web server
 - [x] Secure Website ([Beyond Security](http://www.beyondsecurity.com/vulnerability-scanner-verification/ssujan1.pythonanywhere.com))
 
 ### Getting Started in 6 Easy Steps
