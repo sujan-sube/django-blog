@@ -12,9 +12,11 @@ Below is a list of features that the blog currently has or that will be implemen
 - [x] Account Profile
 - [x] Create Posts
 - [ ] Posts support Markdown
-- [x] Account Access Level
+- [ ] [Async Search for Posts](https://django-ajax-search.readthedocs.io/en/latest/start.html)
+- [ ] [Endless Pagination](http://django-endless-pagination.readthedocs.io/en/latest/index.html)
 - [ ] Responsive Design
 - [ ] uWSGI and Nginx as web server
+- [x] Account Access Level
 - [x] Secure Website ([Beyond Security](http://www.beyondsecurity.com/vulnerability-scanner-verification/ssujan1.pythonanywhere.com))
 
 ### Getting Started in 6 Easy Steps
@@ -29,7 +31,7 @@ Below is a list of features that the blog currently has or that will be implemen
   
 3. Scope to Virtual Environment:
   * For **Windows**: `myvenv\scripts\activate`
-  * For **Linux/Mac**: `source myvenv\bin\activate`
+  * For **Linux/Mac**: `source myvenv/bin/activate`
   
 4. Install Packages:
   * `pip install -r requirements.txt`
