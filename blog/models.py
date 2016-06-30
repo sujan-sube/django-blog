@@ -24,8 +24,6 @@ class UserProfile(models.Model):
     website = models.URLField(blank=True)
     picture = models.ImageField(upload_to='profile_images', blank=True)
     description = models.TextField(blank=True)
-    CHOICES = (('1', 'Yes',), ('2', 'No',))
-    subscription = models.IntegerField(choices=CHOICES, default=1)
 
     def __str__(self):
         return self.user.username
