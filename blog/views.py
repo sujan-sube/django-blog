@@ -5,6 +5,7 @@ from .forms import PostForm, UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from markdownx.utils import markdownify
 
 def register(request):
     registered = False
@@ -49,6 +50,7 @@ def user_login(request):
                 return HttpResponse("Your account is disasbled!")
         else:
             print("Invalid login details: {0}".format(username))
+            return HttpResponse("Invalid login credentials!")
     else:
         return render(request, 'blog/login.html')
 
@@ -64,10 +66,13 @@ def profile(request):
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-pinned_post', '-published_date')
+    for post in posts:
+        post.text = markdownify(post.text)
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    post.text = markdownify(post.text)
     return render(request, 'blog/post_detail.html', {'post': post})
 
 @login_required

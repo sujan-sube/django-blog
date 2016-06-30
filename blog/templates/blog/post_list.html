@@ -11,7 +11,7 @@
                     <span class="glyphicon glyphicon-pushpin"></span>
                 {% endif %}
             </h1>
-            <p>{{ post.text|urlize|linebreaksbr }}</p>
+            <p>{{ post.text|safe }}</p>
             <div class="postfooter">
                 Posted By: {{ post.author }}
             </div>

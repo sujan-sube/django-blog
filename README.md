@@ -14,7 +14,7 @@ Below is a list of features that the blog currently has or that will be implemen
 - [ ] [Posts support Markdown](https://github.com/adi-/django-markdownx)
 - [ ] [Async Search for Posts](https://django-ajax-search.readthedocs.io/en/latest/start.html)
 - [ ] [Endless Pagination](http://django-endless-pagination.readthedocs.io/en/latest/index.html)
-- [ ] Responsive Design
+- [ ] [Material Design](https://github.com/viewflow/django-material)
 - [ ] uWSGI and Nginx as web server
 - [x] Account Access Level
 - [x] Secure Website ([Beyond Security](http://www.beyondsecurity.com/vulnerability-scanner-verification/ssujan1.pythonanywhere.com))
