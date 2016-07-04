@@ -11,7 +11,7 @@ Below is a list of features that the blog currently has or that will be implemen
 - [x] Sign up/Login for Account
 - [x] Account Profile
 - [x] Create Posts
-- [ ] [Posts support Markdown](https://github.com/adi-/django-markdownx)
+- [x] [Posts support Markdown](https://github.com/adi-/django-markdownx)
 - [ ] [Async Search for Posts](https://django-ajax-search.readthedocs.io/en/latest/start.html)
 - [ ] [Endless Pagination](http://django-endless-pagination.readthedocs.io/en/latest/index.html)
 - [ ] [Material Design](https://github.com/viewflow/django-material)
@@ -19,27 +19,30 @@ Below is a list of features that the blog currently has or that will be implemen
 - [x] Account Access Level
 - [x] Secure Website ([Beyond Security](http://www.beyondsecurity.com/vulnerability-scanner-verification/ssujan1.pythonanywhere.com))
 
-### Getting Started in 6 Easy Steps
+### Getting Started
 
-1. Clone this repo: 
+1. Project requirements:
+  * Python3 - install it from [here](https://www.python.org/downloads/)
+
+2. Clone this repo: 
   * `git clone https://github.com/sujan-sube/django-blog.git`
   
-2. Install Virutal Environment: 
+3. Install Virutal Environment: 
   * `cd django-blog`
   * `python -m venv myvenv` 
   * (if you have trouble with this check out this [link](http://tutorial.djangogirls.org/en/django_installation/#virtual-environment))
   
-3. Activate Virtual Environment:
+4. Activate Virtual Environment:
   * For **Windows**: `myvenv\scripts\activate`
   * For **Linux/Mac**: `source myvenv/bin/activate`
   
-4. Install Packages:
+5. Install Packages:
   * `pip install -r requirements.txt`
   
-5. Run DB Migrations:
+6. Run DB Migrations:
   * `python manage.py migrate`
   
-6. Run Django Dev Server:
+7. Run Django Dev Server:
   * `python manage.py runserver`
 
   
