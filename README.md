@@ -11,6 +11,7 @@ Below is a list of features that the blog currently has or that will be implemen
 - [x] Sign up/Login for Account
 - [x] Account Profile
 - [x] Create Posts
+- [ ] Create Topic Pages (similar to Reddit)
 - [x] [Posts support Markdown](https://github.com/adi-/django-markdownx)
 - [ ] [Async Search for Posts](https://django-ajax-search.readthedocs.io/en/latest/start.html)
 - [ ] [Endless Pagination](http://django-endless-pagination.readthedocs.io/en/latest/index.html)
