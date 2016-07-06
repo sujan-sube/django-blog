@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'markdownx',
+    'material',
     'blog',
 ]
 
@@ -69,7 +70,7 @@ TEMPLATES = [
         },
     },
 ]
-print(TEMPLATES[0]['DIRS'])
+
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
