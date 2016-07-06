@@ -1,16 +1,28 @@
 {% extends 'blog/base.html' %}
+{% load material_form %}
 
 {% block content %}
+    {% include 'material/includes/material_css.html' %}
+    {% include 'material/includes/material_js.html' %}
     <div class="user">
-        <h1>User Registration</h1>
+        <h4>User Registration</h4>
         {% if registered %}
             <p>Thank you for registering!</p>
             <a href="/">Return to homepage.</a>
         {% else %}
             <form id="user_form" method="POST" action="/register/" enctype="multipart/form-data">{% csrf_token %}
-            {{ user_form.as_p }}
-            {{ profile_form.as_p }}
-            <button type="submit" class="submit btn btn-default">Submit</button>
+            {% form form=user_form %}
+                {% part form.username prefix %}<i class="material-icons prefix">account_box</i>{% endpart %}
+                {% part form.password prefix %}<i class="material-icons prefix">lock_open</i>{% endpart %}
+                {% part form.email prefix %}<i class="material-icons prefix">email</i>{% endpart %}
+            {% endform %}
+            {% form form=profile_form %}
+                {% part form.description prefix %}<i class="material-icons prefix">description</i>{% endpart %}
+                
+                {% part form.website prefix %}<i class="material-icons prefix">public</i>{% endpart %}
+            {% endform %}
+            <button class="waves-effect waves-light btn pull-right" type="submit">Submit</button>
+
             </form>
         {% endif %}
     </div>
