@@ -1,13 +1,19 @@
 {% extends 'blog/base.html' %}
+{% load material_form %}
 
 {% block content %}
+    {% include 'material/includes/material_css.html' %}
+    {% include 'material/includes/material_js.html' %}
     <div class="user">
-        <h1>User Login</h1>
+        <h4>User Login</h4>
         <form id="login_form" method="POST" action="/login/">{% csrf_token %}
-        Username: <input type="text" name="username" value="" size="30" />
-        <br/>
-        Password: <input type="password" name="password" value="" size="30" />
-        <br/>
-        <button type="submit" class="login btn btn-default">Login</button>
+        {% form form=login_form %}
+            {% part form.username prefix %}<i class="material-icons prefix">account_box</i>{% endpart %}
+            {% part form.password prefix %}<i class="material-icons prefix">lock_open</i>{% endpart %}
+        {% endform %}
+        <br>
+        <div class="center-table">
+            <button type="submit" class="waves-effect waves-light btn">Login</button>
+        </div>
     </div>
 {% endblock %}
