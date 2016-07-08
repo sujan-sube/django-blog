@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post, UserProfile
-from .forms import PostForm, UserForm, UserProfileForm
+from .forms import LoginForm, PostForm, UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
@@ -52,7 +52,8 @@ def user_login(request):
             print("Invalid login details: {0}".format(username))
             return HttpResponse("Invalid login credentials!")
     else:
-        return render(request, 'blog/login.html')
+        login_form = LoginForm()
+        return render(request, 'blog/login.html', {'login_form': login_form})
 
 @login_required
 def user_logout(request):
